@@ -1,0 +1,16 @@
+$dark-cyan: hsl(179, 62%, 40%);
+$cyan: hsl(179, 62%, 43%);
+$bright-yellow: hsl(71, 73%, 54%);
+
+$light-gray: hsl(204, 63%, 100%);
+$grayish-blue: hsl(218, 42%, 87%);
+
+$fs: 16px;
+$normal: 400;
+$bold: 700;
+
+@mixin desktop {
+  @media (min-width: 950px) {
+    @content;
+  }
+}

@@ -1,0 +1,95 @@
+@import './config', './default';
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: $grayish-blue;
+}
+
+.container {
+  max-width: 700px;
+  margin: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+  color: $light-gray;
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+  }
+  .card {
+    padding: 2em;
+    &--white {
+      background: white;
+      grid-column: 1 / -1;
+
+      .card__header {
+        color: $cyan;
+      }
+      .card__sub {
+        color: $bright-yellow;
+      }
+
+      p {
+        color: $grayish-blue;
+        line-height: 24px;
+        font-size: 1.1rem;
+      }
+    }
+
+    &--dark-blue {
+      background: $dark-cyan;
+
+      .card__sub {
+        h1 {
+          display: inline-block;
+          font-size: 2rem;
+          position: relative;
+          margin-bottom: 1rem;
+          white-space: nowrap;
+          span {
+            font-weight: normal;
+            font-size: 1rem;
+            white-space: nowrap;
+            position: absolute;
+            transform: translate(10px, 40%);
+            opacity: 0.7;
+          }
+        }
+      }
+
+      .button {
+        width: 100%;
+        border: none;
+        outline: none;
+        background: $bright-yellow;
+        padding: 1em;
+        font-size: 1.25rem;
+        border-radius: 10px;
+        font-weight: $bold;
+        color: $light-gray;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    &--blue {
+      background: $cyan;
+      ul {
+        li {
+          margin: 0.1em 0;
+        }
+      }
+    }
+
+    &__header {
+      margin-bottom: 1.5rem;
+    }
+
+    &__sub {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
